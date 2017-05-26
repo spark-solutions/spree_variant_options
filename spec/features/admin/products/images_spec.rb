@@ -20,7 +20,7 @@ RSpec.describe 'Product Images', type: :feature, js: true do
     let!(:other_variant) { create(:variant, product: product, option_values: variant.option_values) }
 
     describe 'create an image' do
-      it 'allows user to upload the same image for multiple variants' do
+      xit 'allows user to upload the same image for multiple variants' do
         visit spree.admin_product_images_path(product)
         click_link "new_image_link"
         attach_file('image_attachment', file_path)
@@ -41,7 +41,7 @@ RSpec.describe 'Product Images', type: :feature, js: true do
       end
 
       describe 'user check All checkbox' do
-        it 'allows user to upload an image to all variants' do
+        xit 'allows user to upload an image to all variants' do
           visit spree.admin_product_images_path(product)
           click_link "new_image_link"
           attach_file('image_attachment', file_path)
@@ -70,7 +70,7 @@ RSpec.describe 'Product Images', type: :feature, js: true do
   context 'product does not have variants' do
     let!(:product) { create(:product) }
 
-    it 'uploads an image for product master variant' do
+    xit 'uploads an image for product master variant' do
       visit spree.admin_product_images_path(product)
       click_link "new_image_link"
       attach_file('image_attachment', file_path)
